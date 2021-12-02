@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="bytebanco:jar">
+    <output-path>$PROJECT_DIR$/../../workspace</output-path>
+    <root id="archive" name="bytebanco.jar">
+      <element id="module-output" name="bytebanco" />
+    </root>
+  </artifact>
+</component>
