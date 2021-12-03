@@ -6,7 +6,7 @@ package br.com.alirismaurera.banco.modelo;
  * @author Aliris Maurera
  */
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta>{
 
     private double saldo;
     private int agencia;
@@ -90,8 +90,29 @@ public abstract class Conta {
         return total;
     }
 
+    @Override
+    public boolean equals(Object conta){
+        Conta conta1 = (Conta) conta;
+        if (this.getNumero() != conta1.getNumero()){
+            return false;
+        }
+        if (this.getAgencia() != conta1.getAgencia()){
+            return false;
+        }
+        return true;
+
+    }
+
+    @Override
+    public int compareTo(Conta outra){
+        return Double.compare(this.getNumero(), outra.getNumero());
+    }
+
+    @Override
     public String toString() {
         return " Agencia: " + this.getAgencia() + " Número: " + this.getNumero() +
                 "\n" + this.getTitular();
     }
+
+
 }
